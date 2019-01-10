@@ -1,3 +1,3 @@
-# typora-theme-refine
+# Refine
 
-A clean theme for Typora. Styles based off my [personal website](https://serena.nz)
+A theme for [Typora](https://typora.io). Styles based off my [personal website](https://serena.nz)
