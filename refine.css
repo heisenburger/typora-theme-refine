@@ -1,0 +1,47 @@
+:root {
+
+/* Fonts */
+
+  --ff-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", 
+    "Arial", "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", 
+    sans-serif;
+  --ff-serif: "Adobe Caslon Pro", "Goudy Old Style", 
+    "Athelas", "Californian FB", "Georgia Pro", Georgia,
+    serif;
+  --ff-disp: "Questa Grande", "QuestaGrande", "Didot", "Didonesque", serif;
+  --ff-disp-sm: "Questa", "Georgia Pro", Georgia, serif;
+
+  --f-sml:  0.875rem; // 14px
+  --f-med:  1rem;     // 16px
+  --f-semi: 1.25rem;  // 20px
+  --f-lrg:  1.5rem;   // 24px
+  --f-xlg:  2rem;     // 32px
+  --f-2xl:  3rem;     // 48px
+  --f-hero: 3.75rem;  // 60px
+  --f-xhr:  4.5rem;   // 72px
+  --f-2xh:  6rem;     // 96px
+
+  --f-weight: 400;
+  --f-line-height: 1.5;
+
+/* Lengths */
+
+  --unit: 0.625rem; // 10px
+
+  --u2: calc(2 * var(--unit) );
+  --u4: calc(4 * var(--unit) );
+  --u8: calc(8 * var(--unit) );
+
+/* Colours */
+
+  --grey1: #333;
+  --grey2: #5a5a5a;
+  --grey3: #b2b2b2;
+  --grey4: #d0d0d0;
+  --grey5: #f6f6f6;
+
+  --gold-dark: #a58e19;
+  --gold-bright: #FFD81E;
+  --gold-light: #E5CF67;
+
+}
