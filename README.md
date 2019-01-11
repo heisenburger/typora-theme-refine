@@ -8,9 +8,9 @@ A theme for [Typora](https://typora.io). Optimised for easy reading and uses onl
 
 For ultra-fast performance and the smallest footprint on your harddrive, this theme uses only preinstalled typefaces. This will mean that your theme might look different to the thumbnails, but it should still look beautiful nonetheless.
 
-### Heading styles
+### Varied heading styles
 
-There is a range of display, serif, sans-serif and allcaps title styles for you to use.
+There is a range of display, serif, sans-serif, allcaps and smallcaps title styles for you to use.
 
 ### Comfortable reading measure
 
