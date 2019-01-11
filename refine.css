@@ -11,26 +11,28 @@
   --ff-disp: "Questa Grande", "QuestaGrande", "Didot", "Didonesque", serif;
   --ff-disp-sm: "Questa", "Georgia Pro", Georgia, serif;
 
-  --f-sml:  0.875rem; // 14px
-  --f-med:  1rem;     // 16px
-  --f-semi: 1.25rem;  // 20px
-  --f-lrg:  1.5rem;   // 24px
-  --f-xlg:  2rem;     // 32px
-  --f-2xl:  3rem;     // 48px
-  --f-hero: 3.75rem;  // 60px
-  --f-xhr:  4.5rem;   // 72px
-  --f-2xh:  6rem;     // 96px
+  --f-sml:  0.875rem;
+  --f-med:  1rem;    
+  --f-semi: 1.25rem; 
+  --f-lrg:  1.5rem;  
+  --f-xlg:  2rem;    
+  --f-2xl:  3rem;    
+  --f-hero: 3.75rem; 
+  --f-xhr:  4.5rem;  
+  --f-2xh:  6rem;    
 
   --f-weight: 400;
   --f-line-height: 1.5;
 
 /* Lengths */
 
-  --unit: 0.625rem; // 10px
-
+  --unit: 0.625rem;
   --u2: calc(2 * var(--unit) );
   --u4: calc(4 * var(--unit) );
   --u8: calc(8 * var(--unit) );
+
+  --content: 80rem;
+  --measure: 33em;
 
 /* Colours */
 
@@ -44,4 +46,87 @@
   --gold-bright: #FFD81E;
   --gold-light: #E5CF67;
 
+}
+
+* {
+  box-sizing: border-box
+}
+
+*:focus {
+  background-color: var(--gold-bright);
+  box-shadow: 0 0 0 var(--unit) var(--gold-bright);
+  outline: none
+}
+
+body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,dl,dd,ol,ul,figure {
+  margin: 0;
+  padding: 0
+}
+
+html,body {
+  height: 100%
+}
+
+html {
+  font-size: 16px
+}
+
+@media screen and (min-width: 1800px) {
+  html {
+    font-size:20px
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  html {
+    font-size:24px
+  }
+}
+
+body {
+  font-family: var(--ff-sans);
+  line-height: 1.5;
+  color: var(--grey2);
+  background-color: white;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "kern" 1,"liga" 1,"calt" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 0;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle
+}
+
+figure>img {
+  display: block;
+  margin: 0 auto
+}
+
+figcaption {
+  font-size: var(--f-sml);
+  text-align: center
+}
+
+h1,h2,h3,h4,blockquote {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale
+}
+
+a {
+  color: var(--grey2);
+  text-decoration: none;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(transparent -300%, currentColor 600%);
+  background-image: linear-gradient(transparent -300%, currentColor 600%);
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  transition: all 0.2s ease-in-out
+}
+
+a:hover {
+  color: black
 }
