@@ -143,6 +143,119 @@ a:hover {
 /* Typography */
 /* ---------- */
 
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+small {
+  font-size: var(--f-sml);
+}
+
+big {
+  font-size: var(--f-semi)
+}
+
+h6 {
+  font-size: var(--f-lrg)
+}
+
+h5 {
+  font-size: var(--f-xlg)
+}
+
+h4 {
+  font-size: var(--f-lrg);
+  line-height: 1.25
+}
+
+@media screen and (min-width: 768px) {
+  h4 {
+    font-size:var(--f-xlg)
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h4 {
+    font-size:var(--f-2xl)
+  }
+}
+
+h3 {
+font-size: var(--f-lrg);
+line-height: 1.25
+}
+
+@media screen and (min-width: 480px) {
+  h3 {
+    font-size:var(--f-xlg);
+    line-height: 1
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size:var(--f-2xl)
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h3 {
+    font-size:var(--f-hero)
+  }
+}
+
+h2 {
+font-size: var(--f-xlg);
+line-height: 1.25
+}
+
+@media screen and (min-width: 480px) {
+  h2 {
+    font-size:var(--f-2xl);
+    line-height: 1
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size:var(--f-hero)
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h2 {
+    font-size:var(--f-xhr)
+  }
+}
+
+h1 {
+  font-size: var(--f-xlg);
+  line-height: 1.25
+}
+
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size:var(--f-hero);
+    line-height: 1
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size:var(--f-xhr)
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size:var(--f-2xh)
+  }
+}
+
 /* ------ */
 /* Layout */
 /* ------ */
