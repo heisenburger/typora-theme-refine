@@ -1,3 +1,7 @@
+/* --------- */
+/* Variables */
+/* --------- */
+
 :root {
 
 /* Fonts */
@@ -47,6 +51,10 @@
   --gold-light: #E5CF67;
 
 }
+
+/* ---- */
+/* Base */
+/* ---- */
 
 * {
   box-sizing: border-box
@@ -129,4 +137,31 @@ a {
 
 a:hover {
   color: black
+}
+
+/* ---------- */
+/* Typography */
+/* ---------- */
+
+/* ------ */
+/* Layout */
+/* ------ */
+
+content {
+  max-width: var(--content);
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--u2);
+  padding-right: var(--u2);
+}
+
+@media screen and (min-width: 768px) {
+  content {
+    padding-left: var(--u4);
+    padding-right: var(--u4)
+  }
+}
+
+p {
+  max-width: var(--measure);
 }
