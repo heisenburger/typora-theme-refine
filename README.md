@@ -1,3 +1,5 @@
+![](Refine-large.png)
+
 # Refine
 
 A theme for [Typora](https://typora.io). Optimised for easy reading and uses only preinstalled typefaces. Based on the styling for my [personal website](https://serena.nz/).
@@ -25,3 +27,10 @@ Headers, margins, text sizes and content positioning should all scale with the w
 This theme should support all the usual elements. If you find that it doesn't support an element you use, please feel free to drop me a message or open an issue on this repo.
 
 Happy reading and writing!
+
+
+![](Refine-sample-1.png)
+
+![](Refine-sample-2.png)
+
+![](Refine-sample-3.png)

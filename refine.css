@@ -380,3 +380,8 @@ pre, .CodeMirror {
 #write input[type="checkbox"] {
   margin: 0.75rem 0;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
