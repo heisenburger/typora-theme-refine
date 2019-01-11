@@ -35,7 +35,7 @@
   --u4: calc(4 * var(--unit) );
   --u8: calc(8 * var(--unit) );
 
-  --content: 80rem;
+  --content: 60rem;
   --measure: 33em;
 
 /* Colours */
