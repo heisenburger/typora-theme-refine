@@ -3,6 +3,7 @@
 # Except
 !.gitignore
 !refine.css
+!Refine.png
 !Refine-large.png
 !Refine-sample-1.png
 !Refine-sample-2.png
