@@ -94,7 +94,7 @@ html {
 body {
   font-family: var(--ff-sans);
   line-height: 1.5;
-  color: var(--grey2);
+  color: var(--grey1);
   background-color: white;
   -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1,"liga" 1,"calt" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 0;
@@ -207,8 +207,8 @@ h4 {
   letter-spacing: 0.125em;
 }
 
-@media screen and (min-width: 768px) {
-  h4 {
+@media screen and (min-width: 1024px) {
+  h3 {
     font-size:var(--f-xlg)
   }
 }
@@ -250,7 +250,7 @@ h2 {
   font-size: var(--f-xlg);
   line-height: 1.25;
   margin: 1em 0 0.5em;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0.1em;
 }
 
@@ -264,14 +264,13 @@ h2 {
 @media screen and (min-width: 1024px) {
   h2 {
     font-size:var(--f-hero);
-    font-weight: 200;
+    font-weight: 100;
   }
 }
 
 @media screen and (min-width: 1440px) {
   h2 {
     font-size:var(--f-xhr);
-    font-weight: 100;
   }
 }
 
@@ -359,4 +358,25 @@ h5 {
     margin-left: calc(-1 * var(--u4));
     margin-right: calc(-1 * var(--u4))
   }
+}
+
+ul, ol {
+  margin-left: var(--u4);
+}
+
+hr {
+  margin: var(--u8) 0;
+}
+
+table {
+  margin: var(--u4) 0;
+}
+
+pre, .CodeMirror {
+  background-color: var(--grey5);
+  padding: var(--unit);
+}
+
+#write input[type="checkbox"] {
+  margin: 0.75rem 0;
 }
