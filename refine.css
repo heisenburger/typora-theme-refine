@@ -166,20 +166,45 @@ p {
   margin: 1.25em 0;
 }
 
-h6 {
-  font-size: var(--f-semi);
-  margin-top: 1em;
+h6, thead {
+  font-size: var(--f-sml);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin: 1em 0 0.5em;
 }
 
 h5 {
-  font-size: var(--f-lrg);
-  margin-top: 1em;
+  font-family: var(--ff-serif);
+  font-size: var(--f-semi);
+  margin: 1em 0 0.5em;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h5::after {
+  content: '—'
+}
+
+@media screen and (min-width: 480px) {
+  h5 {
+    font-size:var(--f-lrg)
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h4 {
+    font-size:var(--f-xlg)
+  }
 }
 
 h4 {
   font-size: var(--f-lrg);
   line-height: 1.25;
-  margin-top: 1em;
+  margin: 1em 0 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
 }
 
 @media screen and (min-width: 768px) {
@@ -195,9 +220,11 @@ h4 {
 }
 
 h3 {
+  font-family: var(--ff-serif);
   font-size: var(--f-lrg);
   line-height: 1.25;
-  margin-top: 1em;
+  margin: 1em 0 0.5em;
+  font-weight: 400;
 }
 
 @media screen and (min-width: 480px) {
@@ -223,6 +250,8 @@ h2 {
   font-size: var(--f-xlg);
   line-height: 1.25;
   margin: 1em 0 0.5em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
 }
 
 @media screen and (min-width: 480px) {
@@ -234,17 +263,20 @@ h2 {
 
 @media screen and (min-width: 1024px) {
   h2 {
-    font-size:var(--f-hero)
+    font-size:var(--f-hero);
+    font-weight: 200;
   }
 }
 
 @media screen and (min-width: 1440px) {
   h2 {
-    font-size:var(--f-xhr)
+    font-size:var(--f-xhr);
+    font-weight: 100;
   }
 }
 
 h1 {
+  font-family: var(--ff-disp-sm);
   font-size: var(--f-xlg);
   line-height: 1.25;
   margin: 1em 0 0.5em;
@@ -259,7 +291,9 @@ h1 {
 
 @media screen and (min-width: 1024px) {
   h1 {
-    font-size:var(--f-xhr)
+    font-family: var(--ff-disp);
+    font-size:var(--f-xhr);
+    letter-spacing: -0.01em;
   }
 }
 
@@ -273,7 +307,7 @@ h1 {
 /* Layout */
 /* ------ */
 
-content {
+#write {
   max-width: var(--content);
   width: 100%;
   margin: 0 auto;
@@ -282,7 +316,7 @@ content {
 }
 
 @media screen and (min-width: 768px) {
-  content {
+  #write {
     padding-left: var(--u4);
     padding-right: var(--u4)
   }
@@ -292,14 +326,37 @@ p {
   max-width: var(--measure);
 }
 
-blockquote,h2,h3,h4 {
+blockquote {
+  font-family: var(--ff-serif);
+  font-style: italic;
+}
+
+blockquote p {
+  font-size: 1.5em;
+}
+
+/* Peekout / peekin */
+
+blockquote {
   margin-left: 0;
   margin-right: 0
 }
 
 @media screen and (min-width: 1440px) {
-  blockquote,h2,h3,h4 {
-    margin-left:calc(-1 * var(--u4));
+  blockquote {
+    margin-left: var(--u4);
+    margin-right: var(--u4)
+  }
+}
+
+h5 {
+  margin-left: 0;
+  margin-right: 0
+}
+
+@media screen and (min-width: 1440px) {
+  h5 {
+    margin-left: calc(-1 * var(--u4));
     margin-right: calc(-1 * var(--u4))
   }
 }
