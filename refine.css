@@ -5,15 +5,14 @@
 :root {
 
 /* Fonts */
-
-  --ff-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", 
-    "Arial", "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", 
-    sans-serif;
-  --ff-serif: "Adobe Caslon Pro", "Goudy Old Style", 
-    "Athelas", "Californian FB", "Georgia Pro", Georgia,
-    serif;
-  --ff-disp: "Questa Grande", "QuestaGrande", "Didot", "Didonesque", serif;
-  --ff-disp-sm: "Questa", "Georgia Pro", Georgia, serif;
+  --ff-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Arial", 
+    "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", sans-serif;
+  --ff-serif: "Ivy Journal", "Adobe Caslon Pro", 
+    "Goudy Old Style", "Athelas", "Californian FB", "Georgia Pro", Georgia, serif;
+  --ff-disp: "SangBleu Empire", "F37 Bella", "acta-display", 
+    "Questa Grande", "QuestaGrande", "Didot", "Didonesque", 
+    "Georgia Pro", Georgia, serif;
+  --ff-disp-sm: "SangBleu Kingdom", "Questa", "Georgia Pro", Georgia, serif;
 
   --f-sml:  0.875rem;
   --f-med:  1rem;    
@@ -32,10 +31,12 @@
 
   --unit: 0.625rem;
   --u2: calc(2 * var(--unit) );
+  --u3: calc(3 * var(--unit) );
   --u4: calc(4 * var(--unit) );
+  --u6: calc(6 * var(--unit) );
   --u8: calc(8 * var(--unit) );
 
-  --content: 60rem;
+  --content: 70rem;
   --measure: 33em;
 
 /* Colours */
@@ -76,16 +77,25 @@ html,body {
 }
 
 html {
-  font-size: 16px
+  font-size: 14px
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (orientation: portrait) and (min-width: 1024px) {
+  html {
+    font-size:16px
+  }
+}
+@media screen and (orientation: landscape) and (min-width: 1440px) {
+  html {
+    font-size:16px
+  }
+}
+@media screen and (min-width: 2000px) {
   html {
     font-size:20px
   }
 }
-
-@media screen and (min-width: 2400px) {
+@media screen and (min-width: 2800px) {
   html {
     font-size:24px
   }
@@ -171,13 +181,13 @@ h6, thead {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 0.1em;
-  margin: 1em 0 0.5em;
+  margin: 1.5em 0 1em;
 }
 
 h5 {
   font-family: var(--ff-serif);
   font-size: var(--f-semi);
-  margin: 1em 0 0.5em;
+  margin: 1.5em 0 1em;
   font-style: italic;
   font-weight: 400;
 }
@@ -207,15 +217,15 @@ h4 {
   letter-spacing: 0.125em;
 }
 
-@media screen and (min-width: 1024px) {
-  h3 {
+@media screen and (min-width: 1440px) {
+  h4 {
     font-size:var(--f-xlg)
   }
 }
 
-@media screen and (min-width: 1440px) {
-  h4 {
-    font-size:var(--f-2xl)
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size:var(--f-xlg)
   }
 }
 
@@ -224,7 +234,7 @@ h3 {
   font-size: var(--f-lrg);
   line-height: 1.25;
   margin: 1em 0 0.5em;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 @media screen and (min-width: 480px) {
@@ -283,14 +293,15 @@ h1 {
 
 @media screen and (min-width: 480px) {
   h1 {
+    font-family: var(--ff-disp);
     font-size:var(--f-hero);
     line-height: 1
+    font-weight: 400;
   }
 }
 
 @media screen and (min-width: 1024px) {
   h1 {
-    font-family: var(--ff-disp);
     font-size:var(--f-xhr);
     letter-spacing: -0.01em;
   }
@@ -298,7 +309,8 @@ h1 {
 
 @media screen and (min-width: 1440px) {
   h1 {
-    font-size:var(--f-2xh)
+    font-size:var(--f-2xh);
+    font-weight: 200;
   }
 }
 
@@ -361,6 +373,7 @@ h5 {
 }
 
 ul, ol {
+  max-width: var(--measure);
   margin-left: var(--u4);
 }
 
@@ -384,4 +397,135 @@ pre, .CodeMirror {
 img {
   width: 100%;
   height: auto;
+}
+
+a.md-toc-inner {
+  line-height: 1em;
+  margin: 0.5em 0;
+}
+
+.footnotes {
+  font-size: var(--f-sml);
+  padding: var(--u4) 0 1em;
+  border-top: 1px solid var(--grey4);
+  margin-top: var(--u4);
+}
+
+/*Outlines*/
+
+.outline-content {
+  padding: 0.5em var(--u2);
+}
+
+.outline-h2 > .outline-item {
+  padding-left: var(--unit);
+}
+.outline-h3 > .outline-item {
+  padding-left: var(--u2);
+}
+.outline-h4 > .outline-item {
+  padding-left: var(--u3);
+}
+
+.outline-item {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/*Sidebar*/
+
+.info-panel-tab-wrapper {
+  font-family: var(--ff-sans);
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border {
+  height: 1px;
+}
+
+/*Megamenu*/
+
+.megamenu-menu a,
+.dropdown a {
+  background-image: none;
+}
+
+.megamenu-menu ul, .megamenu-menu ol,
+.dropdown ul, .dropdownol {
+  list-style: none;
+  margin-left: 0;
+}
+
+.megamenu-menu-list li a {
+  display: inline-block;
+  width: 100%;
+  padding-top: var(--u2);
+  padding-bottom: var(--u2);
+  position: relative;
+  font-size: var(--f-med);
+}
+
+.megamenu-menu-list li a span {
+  position: absolute;
+  top: 0;
+}
+
+.megamenu-menu-panel h1 {
+  font-family: var(--ff-sans);
+  font-size: var(--f-2xl);
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (min-width: 768px) {
+  .megamenu-menu-panel h1 {
+    font-family: var(--ff-sans);
+    font-size: var(--f-hero);
+    font-weight: 200;
+    line-height: 1em;
+    letter-spacing: 0.1em;
+  }
+}
+
+.megamenu-menu-panel {
+  max-width: var(--content);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--u4);
+}
+
+/*Form elements*/
+
+input:focus, button:focus, select:focus, textarea:focus {
+  background-color: white;
+  outline: var(--unit) var(--gold-bright);
+}
+
+/*Notifications*/
+
+#md-notification {
+  border: none;
+  max-width: var(--measure);
+  color: black;
+  box-shadow: 0 0 0 1px;
+  padding: var(--u2) 0;
+  left: auto;
+  right: var(--u2);
+}
+
+.typora-node.pin-outline #md-searchpanel,
+.typora-node.pin-outline #md-notification {
+  left: auto;
+}
+
+#md-notification p {
+  font-family: var(--ff-sans);
+  text-align: left;
+}
+
+/*Source*/
+
+#typora-source *:focus {
+  background-color: white;
 }
