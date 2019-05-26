@@ -5,7 +5,7 @@
 :root {
 
 /* Fonts */
-  --ff-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Arial", 
+  --ff-sans: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", 
     "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", sans-serif;
   --ff-serif: "Ivy Journal", "Adobe Caslon Pro", 
     "Goudy Old Style", "Athelas", "Californian FB", "Georgia Pro", Georgia, serif;
