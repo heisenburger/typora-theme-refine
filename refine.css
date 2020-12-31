@@ -608,21 +608,22 @@ pre.md-meta-block {
 
 /* Form elements */
 
-input, button, .btn { 
+input, button, .btn, select { 
   font-family: var(--ff-sans); 
   font-size: var(--f-sml);
   border-radius: 0; 
   -webkit-appearance: none;
-  border:none;
+  border: none;
   height: 100%; 
   color: var(--fg-em); 
   margin: 0 0.1em;
   padding: 0 0.5em;
+  background-color: transparent;
 }
 
-input, .modal-footer .btn-primary, .btn-danger,
+input, select, .modal-footer .btn-primary, .btn-danger,
 .btn-default:hover, .btn-default:active, .open > .dropdown-toggle.btn-default {
-  outline: 1px solid var(--fg-em);
+  border: 1px solid var(--fg-em);
   background-color: var(--bg)
 }
 
@@ -696,18 +697,24 @@ input:focus, button:focus, select:focus, textarea:focus {
   font-size: var(--f-sml);
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
   min-height: 0.8em;
   min-width: 0.8em;
 }
 
-input[type="checkbox"]:focus {
-  outline: 1px solid var(--fg-em);
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
   box-shadow: 0 0 0 0.5rem var(--fc);
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
   background-color: var(--fg-em);
+}
+
+input[type="radio"] {
+  border-radius: 50%;
 }
 
 /* Modals */
@@ -724,7 +731,7 @@ input[type="checkbox"]:checked {
   color: var(--fg-em);
   background-color: var(--fg-dm);
   box-shadow: 0 0 0 1px var(--bg-em);
-  padding: var(--u2);
+  padding: var(--s1) var(--u2);
   top: var(--s1);
   left: auto;
   right: var(--s1);
@@ -823,22 +830,47 @@ input[type="checkbox"]:checked {
   box-shadow: 0 0 var(--unit) var(--bg-em);
 }
 
-.context-menu.dropdown-menu > li > a {
+.context-menu.dropdown-menu > li > a,
+.context-menu.dropdown-menu a,
+#sidebar-files-menu a {
   background-image: none;
   display: block;
-  padding: 0.1em var(--u2);
+  padding: 0.5em var(--u2);
+}
+
+#sidebar-files-menu li {
+  margin: 0.5em 0;
+}
+
+#sidebar-files-menu {
+  margin-bottom: 2rem;
 }
 
 /* Megamenu */
 
+.megamenu-opened header {
+  background-image: none;
+}
+
 .megamenu-content {
   background-color: var(--bg);
   background-image: none;
+  padding-top: var(--s2);
 }
 
 .megamenu-menu a,
 .dropdown a {
   background-image: none;
+}
+
+.megamenu-menu-panel .btn {
+  margin-bottom: 1rem;
+  background-color: var(--bg-em);
+  padding: 0.5em var(--unit);
+  height: auto;
+}
+.megamenu-menu-panel .btn:focus {
+  outline: 0.5em solid var(--fc);
 }
 
 .megamenu-menu ul, .megamenu-menu ol,
@@ -882,4 +914,22 @@ input[type="checkbox"]:checked {
   margin-left: auto;
   margin-right: auto;
   padding: 0 var(--u4);
+}
+
+.preference-item input ~ span {
+  opacity: 1;
+  margin-left: 0.5em;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+  color: var(--fg);
+}
+
+.long-btn {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+.quiet-focus:focus {
+  outline: 1px solid var(--fg);
 }
