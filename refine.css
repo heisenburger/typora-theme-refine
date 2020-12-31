@@ -418,6 +418,16 @@ p {
   max-width: var(--measure);
 }
 
+p[contenteditable=true]{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+}
+p[contenteditable=true]:focus {
+  background-color: var(--bg-em);
+}
+
 blockquote {
   font-family: var(--ff-garamond);
   font-style: italic;
@@ -425,6 +435,11 @@ blockquote {
 
 blockquote p {
   font-size: var(--f-lrg);
+}
+
+mark {
+  background-color: var(--fc);
+  color: var(--fg-em);
 }
 
 /* Peekout / peekin */
@@ -486,20 +501,28 @@ a.md-toc-inner {
 
 .md-def-name:before,
 .md-def-name:after {
-  color: var(--fg-dn);
+  color: var(--fg);
 }
 
 /* Code */
 
 pre,
 pre.md-meta-block,
+.CodeMirror pre,
 code {
   font-family: var(--ff-mono);
+  line-height: 2;
 }
 
-pre,
-pre.md-meta-block,{
-  background-color: var(--fg-dm);
+  /* Code blocks */
+
+pre.md-meta-block {
+  background-color: var(--bg-em);
+  color: var(--fg);
+  padding: var(--unit);
+}
+
+.CodeMirror-code {
   padding: var(--unit);
 }
 
@@ -564,6 +587,10 @@ pre.md-meta-block,{
 
 .file-list-item-file-ext-part {
   opacity: 0.3;
+}
+
+.file-list-item-summary {
+  font-family: var(--f-sans);
 }
 
 /* Form elements */
@@ -656,6 +683,20 @@ input:focus, button:focus, select:focus, textarea:focus {
   font-size: var(--f-sml);
 }
 
+input[type="checkbox"] {
+  min-height: 0.8em;
+  min-width: 0.8em;
+}
+
+input[type="checkbox"]:focus {
+  outline: 1px solid var(--fg-em);
+  box-shadow: 0 0 0 0.5rem var(--fc);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--fg-em);
+}
+
 /* Modals */
 
 .modal-content {
@@ -700,7 +741,6 @@ input:focus, button:focus, select:focus, textarea:focus {
 }
 .CodeMirror-gutters {
   border-right: 1px solid var(--fg-dn);
-  background-color: var(--fg-dm)
 }
 .CodeMirror-linenumber {
   color: var(--fg);
@@ -754,6 +794,11 @@ input:focus, button:focus, select:focus, textarea:focus {
 }
 
 /* Megamenu */
+
+.megamenu-content {
+  background-color: var(--bg);
+  background-image: none;
+}
 
 .megamenu-menu a,
 .dropdown a {
