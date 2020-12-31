@@ -11,6 +11,7 @@
   --ff-serif: "Ivy Journal", "Adobe Caslon Pro", "Goudy Old Style", 
     "Athelas", "Californian FB", "Georgia Pro", Georgia,
     serif; 
+  --ff-mono: "SF Mono", "Roboto Mono", "Consolas", "Inconsolata", "Input", monospace;
   --ff-disp: "SangBleu Empire", "F37 Bella", "acta-display", "Questa Grande", "QuestaGrande", 
     "Didot", "Didonesque", "Georgia Pro", Georgia, serif; 
   --ff-disp-sm: "SangBleu Kingdom", "Questa", "Georgia Pro", Georgia, serif; 
@@ -56,7 +57,11 @@
   --s4: var(--u8);
 
   --content: 70rem;
-  --measure: 33em;
+  --measure: 42em;
+
+    /* Typora length variables */
+    --mac-title-bar-height: var(--u2);
+    --sidebar-width: calc(25 * var(--unit));
 
 /* Colours */
   --grey0: #111; 
@@ -72,13 +77,41 @@
   --gold-light:  #E5CF67;
 
   /* Semantic colours */
-  --fg:    var(--grey2); 
+  --fg:    var(--grey1); 
   --fg-en: var(--grey1); 
-  --fg-em: black; 
+  --fg-em: black;
+  --fg-dn: var(--grey4);
   --fg-dm: var(--grey5); 
   --bg:    white; 
   --fc:    var(--gold-bright); 
   --ac:    var(--gold-dark);
+
+    /* Typora colour variables */
+    --md-char-color: var(--fg-dm);
+    --meta-content-color: var(--fc);
+    --blur-text-color: var(--fg-dn);
+    --drag-placeholder-color: var(--fg-dn);
+    --panel-border-color: var(--fg-dn);
+    --active-toggle-btn-color: var(--fg-dm);
+    --table-border-color: var(--fg-dm);
+    --primary-color: var(--fc);
+    --primary-btn-border-color: var(--ac);
+    --primary-btn-text-color: var(--bg);
+    --search-select-bg-color: var(--fg-em);
+    --search-select-text-color: var(--bg);
+    --heading-char-color: var(--fg-dm);
+    --color-popover-bg-color: var(--fg-dm);
+    --control-text-color: var(--fg);
+    --control-text-hover-color: var(--fg);
+    --window-border: 1px solid var(--fg-dm);
+    --active-file-bg-color: var(--fg-dm);
+    --active-file-text-color: inherit;
+    --active-file-border-color: var(--fg);
+    --focus-ring-color: var(--fc);
+    --side-bar-bg-color: var(--bg-color);
+    --item-hover-bg-color: rgba(229, 229, 229, 0.59);;
+    --item-hover-text-color: inherit;
+    --side-bar-menu-active-tint: var(--side-bar-menu-active-tint);
 }
 
 @media (min-width: 480px) { 
@@ -88,12 +121,16 @@
     --f-hero: var(--f-48); 
     --f-xhr:  var(--f-48); 
     --f-2xh:  var(--f-60); 
+    --s1: var(--u4); 
+    --s3: var(--u6); 
   } 
 }
 
 @media (min-width: 768px) { 
   :root { 
     --f-2xl:  var(--f-32); 
+    --s2: var(--u8); 
+    --s4: var(--u12); 
   } 
 }
 
@@ -102,6 +139,7 @@
     --f-hero: var(--f-48); 
     --f-xhr:  var(--f-60); 
     --f-2xh:  var(--f-72); 
+    --s3: var(--u10); 
   } 
 }
 
@@ -110,47 +148,24 @@
     --f-2xl:  var(--f-48); 
     --f-hero: var(--f-60); 
     --f-xhr:  var(--f-72); 
-    --f-2xh:  var(--f-96); 
-  } 
-}
-
-@media (min-width: 480px) { 
-  :root { 
-    --s1: var(--u4); 
-    --s3: var(--u6); 
-  } 
-}
-
-@media (min-width: 768px) { 
-  :root { 
-    --s2: var(--u8); 
-    --s4: var(--u12); 
-  } 
-}
-
-@media (min-width: 1044px) { 
-  :root { 
-    --s3: var(--u10); 
-  } 
-}
-
-@media (min-width: 1440px) { 
-  :root { 
-    --s4: var(--u16); 
+    --f-2xh:  var(--f-96);
+    --s4: var(--u16);
+    --sidebar-width: calc(28 * var(--unit));
   } 
 }
 
 /* Dark mode */
 @media only screen and (prefers-color-scheme: dark) { 
   :root { 
-    --fg:    var(--grey3); 
-    --fg-en: var(--grey4); 
-    --fg-em: var(--grey5); 
-    --fg-dm: var(--grey1); 
-    --bg:    var(--grey0); 
-    --fc:    var(--gold-dim); 
-    --ac:    var(--gold-bright); 
-  } 
+    --fg:    var(--grey5);
+    --fg-en: var(--grey6);
+    --fg-em: white;
+    --fg-dn: var(--grey2);
+    --fg-dm: var(--grey1);
+    --bg:    var(--grey0);
+    --fc:    var(--gold-dim);
+    --ac:    var(--gold-bright);
+  }
 }
 
 /* ---- */
@@ -213,8 +228,10 @@ body {
 }
 
 @media (prefers-color-scheme: dark){
-  background-color: var(--bg);
-  color: var(--fg);
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+  }
 }
 
 img {
@@ -239,14 +256,6 @@ h1,h2,h3,h4,blockquote {
 
 a {
   color: var(--fg);
-  text-decoration: none;
-  background-color: transparent;
-  background-image: -webkit-linear-gradient(transparent -300%, currentColor 600%);
-  background-image: linear-gradient(transparent -300%, currentColor 600%);
-  text-decoration: none;
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
-  background-position: 0 100%;
   transition: all 0.2s ease-in-out
 }
 
@@ -266,32 +275,49 @@ b, strong {
   font-weight: 600;
 }
 
+a, u { /* underline style */
+  text-decoration: none;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(transparent -300%, currentColor 600%);
+  background-image: linear-gradient(transparent -300%, currentColor 600%);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+}
+
 small {
   font-size: var(--f-sml);
 }
 
 big {
-  font-size: var(--f-semi)
+  font-size: var(--f-lrg)
 }
 
 p {
   font-family: var(--ff-serif);
-  font-size: 1.25rem;
+  font-size: var(--f-semi);
   line-height: 1.7;
-  margin: 1.25em 0;
+  margin: var(--f-semi) 0;
 }
 
 h6, thead {
-  font-size: var(--f-sml);
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 0.1em;
   margin: 1.5em 0 1em;
 }
 
-h5 {
-  font-family: var(--ff-serif);
+thead {
+  font-size: var(--f-sml);
+}
+
+h6 {
   font-size: var(--f-semi);
+}
+
+h5 {
+  font-family: var(--ff-garamond);
+  font-size: var(--f-lrg);
   margin: 1.5em 0 1em;
   font-style: italic;
   font-weight: 400;
@@ -301,20 +327,8 @@ h5::after {
   content: '—'
 }
 
-@media screen and (min-width: 480px) {
-  h5 {
-    font-size:var(--f-lrg)
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  h4 {
-    font-size:var(--f-xlg)
-  }
-}
-
 h4 {
-  font-size: var(--f-lrg);
+  font-size: var(--f-xlg);
   line-height: 1.25;
   margin: 1em 0 0.5em;
   font-weight: 400;
@@ -322,21 +336,9 @@ h4 {
   letter-spacing: 0.125em;
 }
 
-@media screen and (min-width: 1440px) {
-  h4 {
-    font-size:var(--f-xlg)
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  h3 {
-    font-size:var(--f-xlg)
-  }
-}
-
 h3 {
-  font-family: var(--ff-serif);
-  font-size: var(--f-lrg);
+  font-family: var(--ff-garamond);
+  font-size: var(--f-hero);
   line-height: 1.25;
   margin: 1em 0 0.5em;
   font-weight: 200;
@@ -344,25 +346,12 @@ h3 {
 
 @media screen and (min-width: 480px) {
   h3 {
-    font-size:var(--f-xlg);
     line-height: 1
   }
 }
 
-@media screen and (min-width: 1024px) {
-  h3 {
-    font-size:var(--f-2xl)
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  h3 {
-    font-size:var(--f-hero)
-  }
-}
-
 h2 {
-  font-size: var(--f-xlg);
+  font-size: var(--f-xhr);
   line-height: 1.25;
   margin: 1em 0 0.5em;
   font-weight: 200;
@@ -371,27 +360,20 @@ h2 {
 
 @media screen and (min-width: 480px) {
   h2 {
-    font-size:var(--f-2xl);
     line-height: 1
   }
 }
 
 @media screen and (min-width: 1024px) {
   h2 {
-    font-size:var(--f-hero);
     font-weight: 100;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  h2 {
-    font-size:var(--f-xhr);
-  }
-}
 
 h1 {
   font-family: var(--ff-disp-sm);
-  font-size: var(--f-xlg);
+  font-size: var(--f-2xh);
   line-height: 1.25;
   margin: 1em 0 0.5em;
 }
@@ -399,7 +381,6 @@ h1 {
 @media screen and (min-width: 480px) {
   h1 {
     font-family: var(--ff-disp);
-    font-size:var(--f-hero);
     line-height: 1
     font-weight: 400;
   }
@@ -407,14 +388,12 @@ h1 {
 
 @media screen and (min-width: 1024px) {
   h1 {
-    font-size:var(--f-xhr);
     letter-spacing: -0.01em;
   }
 }
 
 @media screen and (min-width: 1440px) {
   h1 {
-    font-size:var(--f-2xh);
     font-weight: 200;
   }
 }
@@ -427,15 +406,8 @@ h1 {
   max-width: var(--content);
   width: 100%;
   margin: 0 auto;
-  padding-left: var(--u2);
-  padding-right: var(--u2);
-}
-
-@media screen and (min-width: 768px) {
-  #write {
-    padding-left: var(--u4);
-    padding-right: var(--u4)
-  }
+  padding-left: var(--s1);
+  padding-right: var(--s1);
 }
 
 p {
@@ -443,12 +415,12 @@ p {
 }
 
 blockquote {
-  font-family: var(--ff-serif);
+  font-family: var(--ff-garamond);
   font-style: italic;
 }
 
 blockquote p {
-  font-size: 1.5em;
+  font-size: var(--f-lrg);
 }
 
 /* Peekout / peekin */
@@ -484,15 +456,11 @@ ul, ol {
 
 hr {
   margin: var(--u8) 0;
+  border-color: var(--fg-dn);
 }
 
 table {
   margin: var(--u4) 0;
-}
-
-pre, .CodeMirror {
-  background-color: var(--grey5);
-  padding: var(--unit);
 }
 
 #write input[type="checkbox"] {
@@ -516,7 +484,33 @@ a.md-toc-inner {
   margin-top: var(--u4);
 }
 
-/*Outlines*/
+.md-def-name:before,
+.md-def-name:after {
+  color: var(--fg-dn);
+}
+
+/* Code */
+
+pre,
+pre.md-meta-block,
+code {
+  font-family: var(--ff-mono);
+}
+
+pre,
+pre.md-meta-block,{
+  background-color: var(--fg-dm);
+  padding: var(--unit);
+}
+
+/* Focus mode */
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: var(--fg-em);
+}
+
+/* Outlines */
 
 .outline-content {
   padding: 0.5em var(--u2);
@@ -537,7 +531,7 @@ a.md-toc-inner {
   padding-bottom: 0.5em;
 }
 
-/*Sidebar*/
+/* Sidebar */
 
 .info-panel-tab-wrapper {
   font-family: var(--ff-sans);
@@ -577,7 +571,7 @@ a.md-toc-inner {
 
 .megamenu-menu-panel h1 {
   font-family: var(--ff-sans);
-  font-size: var(--f-2xl);
+  font-size: var(--f-hero);
   font-weight: 400;
   line-height: 1em;
   letter-spacing: 0.05em;
@@ -585,8 +579,6 @@ a.md-toc-inner {
 
 @media screen and (min-width: 768px) {
   .megamenu-menu-panel h1 {
-    font-family: var(--ff-sans);
-    font-size: var(--f-hero);
     font-weight: 200;
     line-height: 1em;
     letter-spacing: 0.1em;
@@ -600,20 +592,20 @@ a.md-toc-inner {
   padding: 0 var(--u4);
 }
 
-/*Form elements*/
+/* Form elements */
 
 input:focus, button:focus, select:focus, textarea:focus {
   background-color: var(--bg);
   outline: var(--unit) var(--fc);
 }
 
-/*Notifications*/
+/* Notifications */
 
 #md-notification {
   border: none;
   max-width: var(--measure);
   color: var(--fg-em);
-  box-shadow: 0 0 0 1px;
+  box-shadow: 0 0 0 1px var(--fg-em);
   padding: var(--u2) 0;
   left: auto;
   right: var(--u2);
@@ -629,8 +621,14 @@ input:focus, button:focus, select:focus, textarea:focus {
   text-align: left;
 }
 
-/*Source*/
+/* Source */
 
 #typora-source *:focus {
   background-color: var(--bg);
+}
+
+/* CodeMirror */
+.CodeMirror {
+  font-family: var(--ff-mono);
+  background-color: var(--fg-dm);
 }
