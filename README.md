@@ -6,11 +6,11 @@ A theme for [Typora](https://typora.io). Optimised for easy reading. Based on th
 
 ## Notable features
 
-### Local typefaces
+### Local typefaces only
 
-For ultra-fast performance and the smallest footprint on your computer, this theme uses only preinstalled typefaces. This will mean that your theme might look different to the thumbnails, but it should still look beautiful nonetheless. (Though if you'd like to replicate exactly what you see in the thumbnails, check out the [font stack](#Font stack))
+For ultra-fast performance and the smallest footprint on your computer, this theme uses only preinstalled typefaces. This means your theme might look different to the thumbnails, but it should still look beautiful nonetheless. (Though if you'd like to replicate exactly what you see in the thumbnails, check out the [font stack](#font-stack)).
 
-This also means your Typora will work as intended if you're offline. Internet-free writing retreat, here we come!
+This also means your Typora will work beautifully offline. Internet-free writing retreat, here we come!
 
 ### Varied heading styles
 
@@ -18,7 +18,7 @@ There is a range of display, serif, sans-serif, allcaps and smallcaps title styl
 
 ### Comfortable reading measure
 
-Paragraph text sports a maximum width of about 80 characters.
+Paragraph text will never trail too long across the screen, making reading comfortable and speedy.
 
 ### Responsive styling
 
@@ -37,7 +37,6 @@ A few people have asked me what fonts you need installed to render the fonts dis
 - [Athelas](https://fonts.adobe.com/fonts/athelas)
 - [Garamond](https://fonts.google.com/specimen/EB+Garamond)
 
-
 ## Support
 
 This theme should support all the usual elements. If you find that it doesn't support an element you use, please feel free to drop me a message or open an issue on this repo.
@@ -48,12 +47,8 @@ Happy reading and writing!
 
 ## Samples
 
-
-
 ![Beautiful pullquotes](Sample-blockquote.png)
 *Beautiful pullquotes*
-
-
 
 ![Various title styles](Sample-titles.png)
 *Various title styles*
