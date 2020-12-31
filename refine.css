@@ -56,6 +56,12 @@
   --s3: var(--u4); 
   --s4: var(--u8);
 
+/* Breakpoints for reference
+  --bp-sml: 480px;
+  --bp-med: 768px;
+  --bp-lrg: 1044px;
+  --bp-xlg: 1440px; */
+
   --content: 70rem;
   --measure: 42em;
 
@@ -70,7 +76,6 @@
   --grey3: #b2b2b2; 
   --grey4: #d0d0d0; 
   --grey5: #f6f6f6; 
-  --greyt: rgba(80,80,80,0.5); 
   --gold-dim:    #3d3300; 
   --gold-dark:   #a58e19; 
   --gold-bright: #FFD81E; 
@@ -195,7 +200,7 @@ html {
   font-size: 14px
 }
 
-@media screen and (orientation: portrait) and (min-width: 1024px) {
+@media screen and (orientation: portrait) and (min-width: 1044px) {
   html {
     font-size:16px
   }
@@ -348,6 +353,14 @@ h3 {
   h3 {
     line-height: 1
   }
+  h2 {
+    line-height: 1
+  }
+  h1 {
+    font-family: var(--ff-disp);
+    line-height: 1
+    font-weight: 400;
+  }
 }
 
 h2 {
@@ -359,14 +372,15 @@ h2 {
 }
 
 @media screen and (min-width: 480px) {
-  h2 {
-    line-height: 1
-  }
+  
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1044px) {
   h2 {
     font-weight: 100;
+  }
+  h1 {
+    letter-spacing: -0.01em;
   }
 }
 
@@ -376,20 +390,6 @@ h1 {
   font-size: var(--f-2xh);
   line-height: 1.25;
   margin: 1em 0 0.5em;
-}
-
-@media screen and (min-width: 480px) {
-  h1 {
-    font-family: var(--ff-disp);
-    line-height: 1
-    font-weight: 400;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  h1 {
-    letter-spacing: -0.01em;
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -429,20 +429,16 @@ blockquote {
   margin-left: 0;
   margin-right: 0
 }
-
-@media screen and (min-width: 1440px) {
-  blockquote {
-    margin-left: var(--u4);
-    margin-right: var(--u4)
-  }
-}
-
 h5 {
   margin-left: 0;
   margin-right: 0
 }
 
 @media screen and (min-width: 1440px) {
+  blockquote {
+    margin-left: var(--u4);
+    margin-right: var(--u4)
+  }
   h5 {
     margin-left: calc(-1 * var(--u4));
     margin-right: calc(-1 * var(--u4))
@@ -631,4 +627,42 @@ input:focus, button:focus, select:focus, textarea:focus {
 .CodeMirror {
   font-family: var(--ff-mono);
   background-color: var(--fg-dm);
+  color: var(--fg);
+}
+.CodeMirror-gutters {
+  border-right: 1px solid var(--fg-dn);
+  background-color: var(--fg-dm)
+}
+.CodeMirror-linenumber {
+  color: var(--fg);
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid var(--fg-em);
+}
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+  background-color: var(--bg);
+}
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-operator {
+  color: var(--fg-em);
+}
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: var(--bg);
+}
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+  font-weight: 400;
+}
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code,
+.cm-s-typora-default .cm-overlay {
+    font-family: var(--mono);
+  }
+@media (prefers-color-scheme: dark) {
+  .cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+    background-color: rgba(0,0,0,0.1);
+    padding: 0.25em;
+    margin: -0.25em;
+  }
 }
