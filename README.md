@@ -1,4 +1,4 @@
-![](Refine-large.png)
+![Sample image of the Refine Typora theme](Refine.png)
 
 # Refine
 
@@ -20,11 +20,11 @@ There is a range of display, serif, sans-serif, allcaps and smallcaps title styl
 
 Paragraph text sports a maximum width of about 80 characters.
 
-###Responsive styling
+### Responsive styling
 
 Headers, margins, text sizes and content positioning will all scale with the window, giving you the best reading and writing experience no matter what window size.
 
-###**New:** Automatic dark mode
+### **New:** Automatic dark mode
 
 You do not need to manually set another theme for dark mode — this one theme will automatically adjust its colours to match your operating system's light/dark mode setting.
 
@@ -44,9 +44,23 @@ This theme should support all the usual elements. If you find that it doesn't su
 
 Happy reading and writing!
 
+-----
 
-![](Refine-sample-1.png)
+## Samples
 
-![](Refine-sample-2.png)
 
-![](Refine-sample-3.png)
+
+![Beautiful pullquotes](Sample-blockquote.png)
+*Beautiful pullquotes*
+
+
+
+![Various title styles](Sample-titles.png)
+*Various title styles*
+
+![Support for codeblocks](Sample-codeblock.png)
+*Support for codeblocks*
+
+![Support for checklists](Sample-checklist.png)
+*Support for checklists*
+

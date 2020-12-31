@@ -308,7 +308,7 @@ big {
 p {
   font-family: var(--ff-serif);
   font-size: var(--f-semi);
-  line-height: 1.7;
+  line-height: 1.8;
   margin: var(--f-semi) 0;
 }
 
@@ -427,13 +427,10 @@ p[contenteditable=true]:focus {
   background-color: var(--bg-em);
 }
 
-blockquote {
+blockquote p {
   font-family: var(--ff-garamond);
   font-style: italic;
-}
-
-blockquote p {
-  font-size: var(--f-lrg);
+  font-size: var(--f-xlg);
 }
 
 mark {
@@ -454,8 +451,8 @@ h5 {
 
 @media screen and (min-width: 1440px) {
   blockquote {
-    margin-left: var(--u4);
-    margin-right: var(--u4)
+    margin-left: var(--u6);
+    margin-right: var(--u6)
   }
   h5 {
     margin-left: calc(-1 * var(--u4));
@@ -621,6 +618,7 @@ input, button, .btn, select {
 }
 
 input, select, .modal-footer .btn-primary, .btn-danger,
+input[type="checkbox"], input[type="radio"],
 .btn-default:hover, .btn-default:active, .open > .dropdown-toggle.btn-default {
   border: 1px solid var(--fg-em);
   background-color: var(--bg)
@@ -712,6 +710,14 @@ input[type="radio"]:checked {
   background-color: var(--fg-em);
 }
 
+input[type="checkbox"]:checked + p {
+  text-decoration: line-through;
+}
+
+input[type="radio"]:checked + p {
+  font-weight: bold;
+}
+
 input[type="radio"] {
   border-radius: 50%;
 }
@@ -759,7 +765,7 @@ input[type="radio"] {
   color: var(--fg);
 }
 .CodeMirror-gutters {
-  border-right: 1px solid var(--fg-dn);
+  border-right: none;
 }
 .CodeMirror *:focus {
   background-color: transparent;
