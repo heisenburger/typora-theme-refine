@@ -87,11 +87,13 @@
   --fg-em: black;
   --fg-dn: var(--grey4);
   --fg-dm: var(--grey5); 
-  --bg:    white; 
+  --bg:    white;
+  --bg-em: var(--grey5);
   --fc:    var(--gold-bright); 
   --ac:    var(--gold-dark);
 
     /* Typora colour variables */
+    --text-color: var(--fg);
     --md-char-color: var(--fg-dm);
     --meta-content-color: var(--fc);
     --blur-text-color: var(--fg-dn);
@@ -113,8 +115,8 @@
     --active-file-text-color: inherit;
     --active-file-border-color: var(--fg);
     --focus-ring-color: var(--fc);
-    --side-bar-bg-color: var(--bg-color);
-    --item-hover-bg-color: rgba(229, 229, 229, 0.59);;
+    --side-bar-bg-color: var(--bg);
+    --item-hover-bg-color: var(--bg-em);
     --item-hover-text-color: inherit;
     --side-bar-menu-active-tint: var(--side-bar-menu-active-tint);
 }
@@ -168,6 +170,7 @@
     --fg-dn: var(--grey2);
     --fg-dm: var(--grey1);
     --bg:    var(--grey0);
+    --bg-em: black;
     --fc:    var(--gold-dim);
     --ac:    var(--gold-bright);
   }
@@ -529,6 +532,14 @@ pre.md-meta-block,{
 
 /* Sidebar */
 
+#typora-sidebar {
+  border-right: 1px solid var(--fg-dm);
+}
+
+.on-focus-mode #typora-sidebar {
+  color: var(--fg-dn);
+}
+
 .info-panel-tab-wrapper {
   font-family: var(--ff-sans);
 }
@@ -538,7 +549,23 @@ pre.md-meta-block,{
   height: 1px;
 }
 
-/*Megamenu*/
+.outline-item:hover {
+  color: var(--fg);
+}
+
+.file-list-item:hover {
+  background-color: var(--bg-em);
+}
+
+.file-list-item:hover .file-list-item-file-name-part {
+  color: var(--fg-em);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.3;
+}
+
+/* Megamenu */
 
 .megamenu-menu a,
 .dropdown a {
@@ -601,10 +628,12 @@ input:focus, button:focus, select:focus, textarea:focus {
   border: none;
   max-width: var(--measure);
   color: var(--fg-em);
+  background-color: var(--fg-dm);
   box-shadow: 0 0 0 1px var(--fg-em);
-  padding: var(--u2) 0;
+  padding: var(--u2);
+  top: var(--s1);
   left: auto;
-  right: var(--u2);
+  right: var(--s1);
 }
 
 .typora-node.pin-outline #md-searchpanel,
