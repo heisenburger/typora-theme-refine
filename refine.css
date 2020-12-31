@@ -2,55 +2,155 @@
 /* Variables */
 /* --------- */
 
-:root {
+:root { 
 
 /* Fonts */
-  --ff-sans: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", 
-    "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", sans-serif;
-  --ff-serif: "Ivy Journal", "Adobe Caslon Pro", 
-    "Goudy Old Style", "Athelas", "Californian FB", "Georgia Pro", Georgia, serif;
-  --ff-disp: "SangBleu Empire", "F37 Bella", "acta-display", 
-    "Questa Grande", "QuestaGrande", "Didot", "Didonesque", 
-    "Georgia Pro", Georgia, serif;
-  --ff-disp-sm: "SangBleu Kingdom", "Questa", "Georgia Pro", Georgia, serif;
+  --ff-sans: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica Neue", "Helvetica", 
+    "Arial", "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", 
+    sans-serif; 
+  --ff-serif: "Ivy Journal", "Adobe Caslon Pro", "Goudy Old Style", 
+    "Athelas", "Californian FB", "Georgia Pro", Georgia,
+    serif; 
+  --ff-disp: "SangBleu Empire", "F37 Bella", "acta-display", "Questa Grande", "QuestaGrande", 
+    "Didot", "Didonesque", "Georgia Pro", Georgia, serif; 
+  --ff-disp-sm: "SangBleu Kingdom", "Questa", "Georgia Pro", Georgia, serif; 
+  --ff-garamond: "Adobe Garamond Pro", "Adobe Garamond", "EB Garamond", Garamond, serif; 
+  --ff-helvetica: "Helvetica Neue", "Helvetica", Arial, sans-serif; 
 
-  --f-sml:  0.875rem;
-  --f-med:  1rem;    
-  --f-semi: 1.25rem; 
-  --f-lrg:  1.5rem;  
-  --f-xlg:  2rem;    
-  --f-2xl:  3rem;    
-  --f-hero: 3.75rem; 
-  --f-xhr:  4.5rem;  
-  --f-2xh:  6rem;    
+/* Font sizes */
+  --f-14: 0.875rem; 
+  --f-16:     1rem; 
+  --f-20:  1.25rem; 
+  --f-24:   1.5rem; 
+  --f-32:     2rem; 
+  --f-48:     3rem; 
+  --f-60:  3.75rem; 
+  --f-72:   4.5rem; 
+  --f-96:     6rem; 
 
-  --f-weight: 400;
-  --f-line-height: 1.5;
+  /* Semantic font sizes */
+  --f-sml:  var(--f-14); 
+  --f-med:  var(--f-16); 
+  --f-semi: var(--f-20); 
+  --f-lrg:  var(--f-20); 
+  --f-xlg:  var(--f-24); 
+  --f-2xl:  var(--f-24); 
+  --f-hero: var(--f-24); 
+  --f-xhr:  var(--f-32); 
+  --f-2xh:  var(--f-32);
 
 /* Lengths */
+  --unit:  0.625rem; 
+  --u2: calc(2 * var(--unit)); 
+  --u4: calc(4 * var(--unit)); 
+  --u6: calc(6 * var(--unit)); 
+  --u8: calc(8 * var(--unit)); 
+  --u10: calc(10 * var(--unit)); 
+  --u12: calc(12 * var(--unit)); 
+  --u16: calc(16 * var(--unit)); 
 
-  --unit: 0.625rem;
-  --u2: calc(2 * var(--unit) );
-  --u3: calc(3 * var(--unit) );
-  --u4: calc(4 * var(--unit) );
-  --u6: calc(6 * var(--unit) );
-  --u8: calc(8 * var(--unit) );
+  /* Semantic lengths */
+  --s1: var(--u2); 
+  --s2: var(--u4); 
+  --s3: var(--u4); 
+  --s4: var(--u8);
 
   --content: 70rem;
   --measure: 33em;
 
 /* Colours */
+  --grey0: #111; 
+  --grey1: #333; 
+  --grey2: #5a5a5a; 
+  --grey3: #b2b2b2; 
+  --grey4: #d0d0d0; 
+  --grey5: #f6f6f6; 
+  --greyt: rgba(80,80,80,0.5); 
+  --gold-dim:    #3d3300; 
+  --gold-dark:   #a58e19; 
+  --gold-bright: #FFD81E; 
+  --gold-light:  #E5CF67;
 
-  --grey1: #333;
-  --grey2: #5a5a5a;
-  --grey3: #b2b2b2;
-  --grey4: #d0d0d0;
-  --grey5: #f6f6f6;
+  /* Semantic colours */
+  --fg:    var(--grey2); 
+  --fg-en: var(--grey1); 
+  --fg-em: black; 
+  --fg-dm: var(--grey5); 
+  --bg:    white; 
+  --fc:    var(--gold-bright); 
+  --ac:    var(--gold-dark);
+}
 
-  --gold-dark: #a58e19;
-  --gold-bright: #FFD81E;
-  --gold-light: #E5CF67;
+@media (min-width: 480px) { 
+  :root { 
+    --f-lrg:  var(--f-24); 
+    --f-xlg:  var(--f-32); 
+    --f-hero: var(--f-48); 
+    --f-xhr:  var(--f-48); 
+    --f-2xh:  var(--f-60); 
+  } 
+}
 
+@media (min-width: 768px) { 
+  :root { 
+    --f-2xl:  var(--f-32); 
+  } 
+}
+
+@media (min-width: 1044px) { 
+  :root { 
+    --f-hero: var(--f-48); 
+    --f-xhr:  var(--f-60); 
+    --f-2xh:  var(--f-72); 
+  } 
+}
+
+@media (min-width: 1440px) { 
+  :root { 
+    --f-2xl:  var(--f-48); 
+    --f-hero: var(--f-60); 
+    --f-xhr:  var(--f-72); 
+    --f-2xh:  var(--f-96); 
+  } 
+}
+
+@media (min-width: 480px) { 
+  :root { 
+    --s1: var(--u4); 
+    --s3: var(--u6); 
+  } 
+}
+
+@media (min-width: 768px) { 
+  :root { 
+    --s2: var(--u8); 
+    --s4: var(--u12); 
+  } 
+}
+
+@media (min-width: 1044px) { 
+  :root { 
+    --s3: var(--u10); 
+  } 
+}
+
+@media (min-width: 1440px) { 
+  :root { 
+    --s4: var(--u16); 
+  } 
+}
+
+/* Dark mode */
+@media only screen and (prefers-color-scheme: dark) { 
+  :root { 
+    --fg:    var(--grey3); 
+    --fg-en: var(--grey4); 
+    --fg-em: var(--grey5); 
+    --fg-dm: var(--grey1); 
+    --bg:    var(--grey0); 
+    --fc:    var(--gold-dim); 
+    --ac:    var(--gold-bright); 
+  } 
 }
 
 /* ---- */
