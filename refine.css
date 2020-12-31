@@ -492,11 +492,24 @@ a.md-toc-inner {
   margin: 0.5em 0;
 }
 
+.md-toc:focus {
+  background-color: transparent;
+}
+
+.md-toc:focus .md-toc-content {
+  border: 1px solid var(--fg-dn);
+}
+
 .footnotes {
   font-size: var(--f-sml);
   padding: var(--u4) 0 1em;
   border-top: 1px solid var(--grey4);
   margin-top: var(--u4);
+}
+
+sup.md-footnote {
+  background-color: var(--bg-em);
+  color: var(--fg);
 }
 
 .md-def-name:before,
@@ -736,14 +749,17 @@ input[type="checkbox"]:checked {
 /* CodeMirror */
 .CodeMirror {
   font-family: var(--ff-mono);
-  background-color: var(--fg-dm);
+  background-color: var(--bg-em);
   color: var(--fg);
 }
 .CodeMirror-gutters {
   border-right: 1px solid var(--fg-dn);
 }
+.CodeMirror *:focus {
+  background-color: transparent;
+}
 .CodeMirror-linenumber {
-  color: var(--fg);
+  color: var(--fg-dn);
 }
 .CodeMirror div.CodeMirror-cursor {
   border-left: 1px solid var(--fg-em);
@@ -774,6 +790,26 @@ input[type="checkbox"]:checked {
     padding: 0.25em;
     margin: -0.25em;
   }
+  .cm-s-inner .cm-tag {
+    color: #0a1;
+  }
+  .cm-s-inner .cm-attribute,
+  .cm-s-inner .cm-def {
+    color: #78f;
+  }
+  .cm-s-inner .cm-meta {
+    color: #888;
+  }
+  .cm-s-inner .cm-number {
+    color: #5a3;
+  }
+  .cm-s-inner .cm-keyword,
+  .cm-s-inner .cm-builtin {
+    color: #a8c;
+  }
+  .cm-s-inner .cm-string {
+    color: #faa;
+}
 }
 
 /* Context Menu */
