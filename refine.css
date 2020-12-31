@@ -162,8 +162,8 @@
 }
 
 *:focus {
-  background-color: var(--gold-bright);
-  box-shadow: 0 0 0 var(--unit) var(--gold-bright);
+  background-color: var(--fc);
+  box-shadow: 0 0 0 var(--unit) var(--fc);
   outline: none
 }
 
@@ -204,12 +204,17 @@ html {
 body {
   font-family: var(--ff-sans);
   line-height: 1.5;
-  color: var(--grey1);
-  background-color: white;
+  color: var(--fg);
+  background-color: var(--bg);
   -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1,"liga" 1,"calt" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 0;
   font-kerning: normal;
   text-rendering: optimizeLegibility
+}
+
+@media (prefers-color-scheme: dark){
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 img {
@@ -233,7 +238,7 @@ h1,h2,h3,h4,blockquote {
 }
 
 a {
-  color: var(--grey2);
+  color: var(--fg);
   text-decoration: none;
   background-color: transparent;
   background-image: -webkit-linear-gradient(transparent -300%, currentColor 600%);
@@ -246,7 +251,7 @@ a {
 }
 
 a:hover {
-  color: black
+  color: var(--fg-em);
 }
 
 /* ---------- */
@@ -598,8 +603,8 @@ a.md-toc-inner {
 /*Form elements*/
 
 input:focus, button:focus, select:focus, textarea:focus {
-  background-color: white;
-  outline: var(--unit) var(--gold-bright);
+  background-color: var(--bg);
+  outline: var(--unit) var(--fc);
 }
 
 /*Notifications*/
@@ -607,7 +612,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 #md-notification {
   border: none;
   max-width: var(--measure);
-  color: black;
+  color: var(--fg-em);
   box-shadow: 0 0 0 1px;
   padding: var(--u2) 0;
   left: auto;
@@ -627,5 +632,5 @@ input:focus, button:focus, select:focus, textarea:focus {
 /*Source*/
 
 #typora-source *:focus {
-  background-color: white;
+  background-color: var(--bg);
 }
