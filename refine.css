@@ -168,9 +168,9 @@
     --fg:    var(--grey5);
     --fg-en: var(--grey6);
     --fg-em: white;
-    --fg-dn: var(--grey2);
-    --fg-dm: var(--grey1);
-    --bg:    var(--grey0);
+    --fg-dn: var(--grey3);
+    --fg-dm: var(--grey2);
+    --bg:    var(--grey1);
     --bg-em: black;
     --fc:    var(--gold-dim);
     --ac:    var(--gold-bright);
@@ -240,6 +240,9 @@ body {
   body {
     background-color: var(--bg);
     color: var(--fg);
+  }
+  img {
+    filter: contrast(0.9);
   }
 }
 
@@ -353,20 +356,6 @@ h3 {
   font-weight: 200;
 }
 
-@media screen and (min-width: 480px) {
-  h3 {
-    line-height: 1
-  }
-  h2 {
-    line-height: 1
-  }
-  h1 {
-    font-family: var(--ff-disp);
-    line-height: 1
-    font-weight: 400;
-  }
-}
-
 h2 {
   font-size: var(--f-xhr);
   line-height: 1.25;
@@ -375,8 +364,26 @@ h2 {
   letter-spacing: 0.1em;
 }
 
+
+h1 {
+  font-family: var(--ff-disp-sm);
+  font-size: var(--f-2xh);
+  line-height: 1.25;
+  margin: 1em 0 0.5em;
+}
+
 @media screen and (min-width: 480px) {
-  
+  h3 {
+    line-height: 1;
+  }
+  h2 {
+    line-height: 1;
+  }
+  h1 {
+    font-family: var(--ff-disp);
+    line-height: 1;
+    font-weight: 400;
+  }
 }
 
 @media screen and (min-width: 1044px) {
@@ -386,14 +393,6 @@ h2 {
   h1 {
     letter-spacing: -0.01em;
   }
-}
-
-
-h1 {
-  font-family: var(--ff-disp-sm);
-  font-size: var(--f-2xh);
-  line-height: 1.25;
-  margin: 1em 0 0.5em;
 }
 
 @media screen and (min-width: 1440px) {
@@ -770,6 +769,9 @@ input[type="radio"] {
 }
 .CodeMirror div.CodeMirror-cursor {
   border-left: 1px solid var(--fg-em);
+}
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+  border: 0.5px solid var(--fg);
 }
 .CodeMirror-scrollbar-filler,
 .CodeMirror-gutter-filler {
