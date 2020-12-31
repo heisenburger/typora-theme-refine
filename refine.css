@@ -565,6 +565,103 @@ pre.md-meta-block,{
   opacity: 0.3;
 }
 
+/* Form elements */
+
+input:focus, button:focus, select:focus, textarea:focus {
+  background-color: var(--bg);
+  outline: var(--unit) var(--fc);
+}
+
+/* Notifications */
+
+#md-notification {
+  border: none;
+  max-width: var(--measure);
+  color: var(--fg-em);
+  background-color: var(--fg-dm);
+  box-shadow: 0 0 0 1px var(--fg-dm);
+  padding: var(--u2);
+  top: var(--s1);
+  left: auto;
+  right: var(--s1);
+}
+
+.typora-node.pin-outline #md-searchpanel,
+.typora-node.pin-outline #md-notification {
+  left: auto;
+}
+
+#md-notification p {
+  font-family: var(--ff-sans);
+  text-align: left;
+}
+
+/* Source View */
+
+#typora-source *:focus {
+  background-color: var(--bg);
+}
+
+/* CodeMirror */
+.CodeMirror {
+  font-family: var(--ff-mono);
+  background-color: var(--fg-dm);
+  color: var(--fg);
+}
+.CodeMirror-gutters {
+  border-right: 1px solid var(--fg-dn);
+  background-color: var(--fg-dm)
+}
+.CodeMirror-linenumber {
+  color: var(--fg);
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid var(--fg-em);
+}
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+  background-color: var(--bg);
+}
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-operator {
+  color: var(--fg-em);
+}
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: var(--bg);
+}
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+  font-weight: 400;
+}
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code,
+.cm-s-typora-default .cm-overlay {
+    font-family: var(--mono);
+  }
+@media (prefers-color-scheme: dark) {
+  .cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+    background-color: rgba(0,0,0,0.1);
+    padding: 0.25em;
+    margin: -0.25em;
+  }
+}
+
+/* Context Menu */
+
+.context-menu {
+  width: 200px;
+  font-size: var(--f-sml);
+  padding-top: var(--unit);
+  padding-bottom: var(--unit);
+  border: 1px solid var(--fg-dn);
+}
+
+.context-menu.dropdown-menu > li > a {
+  background-image: none;
+  display: block;
+  padding: 0.1em var(--u2);
+}
+
 /* Megamenu */
 
 .megamenu-menu a,
@@ -613,85 +710,4 @@ pre.md-meta-block,{
   margin-left: auto;
   margin-right: auto;
   padding: 0 var(--u4);
-}
-
-/* Form elements */
-
-input:focus, button:focus, select:focus, textarea:focus {
-  background-color: var(--bg);
-  outline: var(--unit) var(--fc);
-}
-
-/* Notifications */
-
-#md-notification {
-  border: none;
-  max-width: var(--measure);
-  color: var(--fg-em);
-  background-color: var(--fg-dm);
-  box-shadow: 0 0 0 1px var(--fg-em);
-  padding: var(--u2);
-  top: var(--s1);
-  left: auto;
-  right: var(--s1);
-}
-
-.typora-node.pin-outline #md-searchpanel,
-.typora-node.pin-outline #md-notification {
-  left: auto;
-}
-
-#md-notification p {
-  font-family: var(--ff-sans);
-  text-align: left;
-}
-
-/* Source */
-
-#typora-source *:focus {
-  background-color: var(--bg);
-}
-
-/* CodeMirror */
-.CodeMirror {
-  font-family: var(--ff-mono);
-  background-color: var(--fg-dm);
-  color: var(--fg);
-}
-.CodeMirror-gutters {
-  border-right: 1px solid var(--fg-dn);
-  background-color: var(--fg-dm)
-}
-.CodeMirror-linenumber {
-  color: var(--fg);
-}
-.CodeMirror div.CodeMirror-cursor {
-  border-left: 1px solid var(--fg-em);
-}
-.CodeMirror-scrollbar-filler,
-.CodeMirror-gutter-filler {
-  background-color: var(--bg);
-}
-.cm-s-inner .cm-variable,
-.cm-s-inner .cm-property,
-.cm-s-inner .cm-operator {
-  color: var(--fg-em);
-}
-.cm-s-typora-default .CodeMirror-activeline-background {
-    background: var(--bg);
-}
-.cm-s-typora-default .cm-header,
-.cm-s-typora-default .cm-property {
-  font-weight: 400;
-}
-.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code,
-.cm-s-typora-default .cm-overlay {
-    font-family: var(--mono);
-  }
-@media (prefers-color-scheme: dark) {
-  .cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
-    background-color: rgba(0,0,0,0.1);
-    padding: 0.25em;
-    margin: -0.25em;
-  }
 }
