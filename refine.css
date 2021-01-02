@@ -102,7 +102,7 @@
     --panel-border-color: var(--fg-dn);
     --active-toggle-btn-color: var(--fg-dm);
     --table-border-color: var(--fg-dm);
-    --primary-color: var(--fc);
+    --primary-color: var(--ac);
     --primary-btn-border-color: var(--ac);
     --primary-btn-text-color: var(--bg);
     --search-select-bg-color: var(--fg-em);
@@ -616,16 +616,21 @@ input, button, .btn, select {
   background-color: transparent;
 }
 
-input, select, .modal-footer .btn-primary, .btn-danger,
-input[type="checkbox"], input[type="radio"],
-.btn-default:hover, .btn-default:active, .open > .dropdown-toggle.btn-default {
-  border: 1px solid var(--fg-em);
-  background-color: var(--bg)
+.modal-footer .btn-default:not(:hover),
+.modal-footer .btn-default, .modal-footer .btn-primary {
+  border: 1px solid transparent;
 }
 
 button, .btn {
   position: relative;
   z-index: 0;
+}
+
+input, select, .modal-footer .btn-primary, .btn-danger,
+input[type="checkbox"], input[type="radio"],
+.btn-default:hover, .btn-default:active, .open > .dropdown-toggle.btn-default {
+  border: 1px solid var(--fg-em);
+  background-color: var(--bg)
 }
 
 button:hover, .btn:hover {
@@ -939,4 +944,9 @@ input[type="radio"] {
 
 .quiet-focus:focus {
   outline: 1px solid var(--fg);
+}
+
+input[type="checkbox"]:checked + span,
+input[type="radio"]:checked + span {
+  font-weight: bold;
 }
